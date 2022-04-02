@@ -1,0 +1,3 @@
+npm install inside api folder
+npm start inside api folder
+go to http://localhost:3000/flavio/photos
