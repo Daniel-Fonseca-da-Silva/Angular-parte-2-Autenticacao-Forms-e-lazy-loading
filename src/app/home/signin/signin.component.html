@@ -1,12 +1,29 @@
 <h4 class="text-center">Tela de login</h4>
-<form class="form mt-4">
+<form [formGroup]="loginForm" class="form mt-4">
     <div class="form-group">
-    <input class="form-control text-center" placeholder="User name" autofocus>
+    <input formControlName="userName"
+      class="form-control text-center"
+      placeholder="User name"
+      autofocus>
+      <small
+        *ngIf="loginForm.get('userName').errors?.required"
+        class="text-danger d-block mt-2">
+          User name is required!
+      </small>
   </div>
   <div class="form-group">
-    <input class="form-control text-center" type="password" placeholder="password">
+    <input
+    formControlName="password"
+    class="form-control text-center"
+    type="password"
+    placeholder="password">
+    <small
+      *ngIf="loginForm.get('password').errors?.required"
+      class="text-danger d-block mt-2">
+        Password is required!
+    </small>
   </div>
-  <button type="submit" class="btn btn-primary btn-block">Login</button>
+  <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-block">Login</button>
 </form>
 
 <p class="text-center mt-4">Not a user? <a>Register now</a></p>
