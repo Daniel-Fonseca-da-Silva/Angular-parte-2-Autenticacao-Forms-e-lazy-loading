@@ -18,6 +18,4 @@ export class SigninComponent implements OnInit {
 
   loginForm: FormGroup
 
-
-
 }
