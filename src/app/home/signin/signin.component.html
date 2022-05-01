@@ -1,7 +1,8 @@
 <h4 class="text-center">Tela de login</h4>
 <form [formGroup]="loginForm" class="form mt-4" (submit)="login()">
     <div class="form-group">
-    <input formControlName="name"
+    <input #userNameInput
+      formControlName="name"
       class="form-control text-center"
       placeholder="User name"
       autofocus>
